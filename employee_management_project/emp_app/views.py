@@ -1,11 +1,17 @@
 from django.shortcuts import render
+from .models import Employee
 
 # Create your views here.
 def index (request):
     return render(request,'index.html')
 
 def view (request):
-    return render(request,'view.html')
+    emps = Employee.objects.all()
+    context={
+        'emps':emps
+    }
+    
+    return render(request,'view.html',context)
 
 def add (request):
     return render(request,'add.html')

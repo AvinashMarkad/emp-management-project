@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Home Page</title>
+    <title>View Employee</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <body class="text-uppercase">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height:100px;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img href="/" src="{% static 'img/reshot-icon-employee-TCW4K37ZS6.svg' %}" alt="logo" width="30" height="24">
@@ -22,30 +22,57 @@
                 <a class="nav-link " aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/view">View</a>
+                <a class="nav-link active" href="/view">View employee</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/add">Add</a>
+                <a class="nav-link" href="/add">Add employee</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/remove">Remove</a>
+                <a class="nav-link" href="/remove">Remove employee</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/filter">Filter</a>
+                <a class="nav-link" href="/filter">Search employee</a>
               </li>
+              
             </ul>
           </div>
         </div>
       </nav>
-    {% comment %} <div class="container">
-
-        <a class="btn btn-info" href="/view" role="button">View emp</a>
-        <a class="btn btn-success" href="/add" role="button">Add emp</a>
-        <a class="btn btn-danger" href="/remove" role="button">Remove emp</a>
-        <a class="btn btn-secondary" href="/filter" role="button">Filter emp</a>
-        
-    </div> {% endcomment %}
-    
+ 
+    <div class="container-fluid">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">sr.no.</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Deptpartment</th>
+            <th scope="col">salary</th>
+            <th scope="col">bonus</th>
+            <th scope="col">role of emp</th>
+            <th scope="col">phone no</th>
+            <th scope="col">hire_date</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for emp in emps %}
+          <tr>
+            <th scope="row">1</th>
+            <td>{{ emp.first_name }}</td>
+            <td>{{ emp.last_name }}</td>
+            <td>{{ emp.dept.name }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>{{ emp.bonus }}</td>
+            <td>{{ emp.role.name }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{   emp.hire_date}}</td>
+          </tr>  
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  
 
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
