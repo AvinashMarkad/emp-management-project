@@ -38,6 +38,42 @@
           </div>
         </div>
       </nav>
+      <div class="container">
+        <form action="/add" method="post">
+          {% csrf_token %}
+          <div class="mb-4 p-2">
+            <label for="first_name" class="form-label">first_name</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" value="{{first_name}}">
+          </div>
+          <div class="mb-4 p-2">
+            <label for="last_name" class="form-label">last_name</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" value="{{last_name}}">
+          </div>
+          <div class="mb-4 p-2">
+            <label for="dept" class="form-label">dept</label>
+            <input type="text" class="form-control" name="dept" id="dept" value="{{Department}}">
+          </div>
+          <div class="mb-4 p-2">
+            <label for="bonus" class="form-label">bonus</label>
+            <input type="text" class="form-control" name="bonus" id="bonus" value="{{bonus}}">
+          </div>
+          <div class="mb-4 p-2">
+            <label for="salary" class="form-label">salary</label>
+            <input type="text" class="form-control" name="salary" id="salary" value="{{salary}}">
+          </div>
+          <div class="mb-4 p-2">
+            <label for="role" class="form-label">role</label>
+            <input type="text" class="form-control" name="role" id="role" value="{{role}}">
+          </div>
+          <div class="mb-4 p-2">
+            <label for="phone" class="form-label">phone</label>
+            <input type="number" class="form-control" name="phone" id="phone" value="{{phone}}">
+          </div>
+          <div class="mb-4 p-2">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </form>
+      </div>
  
     
   
